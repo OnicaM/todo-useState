@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect, useReducer } from 'react';
+import Form from './component/Form';
+import Todolist from './component/Todolist';
+import Filter from './component/Filter';
 import './App.css';
+import useTodoWithFilter from './useTodos';
+import AppContext from './AppContext';
+import TodoList from './component/Todolist';
+import useTodosReducer from './component/useTodosReducer';
+
 
 function App() {
+ const { 
+    // addTodo,
+    setActiveFilter,
+    todos,
+    activeFilter,
+    todosToDisplay,
+    removeItem,
+    toggleTodo,
+    setTodos
+ } = useTodoWithFilter();
+  
+ const [state, dispatch] = useReducer(useTodosReducer, 'defaultState');
+ const testAction = {type:'test'};
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={{state, dispatch}}>
+      <div className="todo-app">
+        <Form />
+        <Filter/>
+        <TodoList />
+        </div>
+      </AppContext.Provider>
   );
 }
 
