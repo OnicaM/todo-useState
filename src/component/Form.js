@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 
-function Form(props){
+function Form({setTodos, todos}){
     const [todoText, setTodoText] = useState('');
-    
-    function addTodo(e){
-        e.preventDefault();
-        props.setTodos([...props.todos, {
-            text: todoText,
-            done: false
-        }])
-    }
+    console.log('TD: ',todos);
+    function addTodo(e) {
+    e.preventDefault();
+      setTodos([
+        ...todos,
+        {
+          text: todoText,
+          done: false
+        }
+      ]);
+    setTodoText("");
+  }
+
+
+
+
     // function onInputChange(e){
     //     setTodoText(e.target.value);
     // }

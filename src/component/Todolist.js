@@ -16,24 +16,22 @@ function TodoListItem({todo,onChangeTodo, onRemoveTodo}){
 
 function Todolist({todos , toggleTodo, removeItem, checkItem}){
     
-    // return (
-    //   <ul className="list-todo">
-    //       {todos.map((todo , index) => 
-    //             <li key={todo.text}>
-    //                 <TodoListItem 
-    //                 todo={todo} 
-    //                 onChangeTodo={()=> toggleTodo(index) }
-    //                 key={todo.text}
-    //                 onRemoveTodo={ () => removeItem()}
-    //                 />
-    //             </li>
-    //         )}
+    return (
+      <ul className="list-todo">
+          {todos.map((todo , index) => 
+                <li key={todo.text}>
+                    <TodoListItem 
+                    todo={todo} 
+                    onChangeTodo={()=> toggleTodo(index) }
+                    key={todo.text}
+                    onRemoveTodo={ () => removeItem()}
+                    />
+                </li>
+            )}
             
-    //   </ul>
-    // )
-    return(
-        <p>Text</p>
+      </ul>
     )
+  
 }
 
 export default Todolist;

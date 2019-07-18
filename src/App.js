@@ -21,18 +21,24 @@ function App() {
     setTodos
  } = useTodoWithFilter();
   
- const [state, dispatch] = useReducer(useTodosReducer, 'defaultState');
- const testAction = {type:'test'};
+ // const [state, dispatch] = useReducer(useTodosReducer, 'defaultState');
+ // const testAction = {type:'test'};
 
 
   return (
-    <AppContext.Provider value={{state, dispatch}}>
+    // <AppContext.Provider value={{state, dispatch}}>
       <div className="todo-app">
-        <Form />
-        <Filter/>
-        <TodoList />
+        <Form setTodos={setTodos} todos={todos} />
+        <Filter setActiveFilter={setActiveFilter} />
+      {todos[0] ? (
+        <p>
+          Showing {activeFilter} ({todosToDisplay.length}:{""})
+        </p>
+      ) : null}
+        <TodoList todos={todos} removeItem={removeItem} toggleTodo={toggleTodo}/>
         </div>
-      </AppContext.Provider>
+
+      //// </AppContext.Provider>
   );
 }
 

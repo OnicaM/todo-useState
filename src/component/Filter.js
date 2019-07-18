@@ -8,7 +8,7 @@ import AppContext from '../AppContext';
 function Filter({setActiveFilter}){
 
     
-    const {state, dispatch} = useContext(AppContext)
+    // const {state, dispatch} = useContext(AppContext)
     
    
     function onFilterClick(filter){
@@ -23,9 +23,7 @@ function Filter({setActiveFilter}){
         <a className="button--filter" href="/none" onClick={onFilterClick(DONE)}>Complete</a>
         <a className="button--filter" href="/none" onClick={onFilterClick(TODO)}>In progress</a>
         
-        <button onClick={() => dispatch({type:'test'})}>click</button>
         
-        {state}
     </div>
 
     )
