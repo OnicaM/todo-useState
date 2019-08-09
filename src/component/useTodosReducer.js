@@ -2,8 +2,8 @@
 
 function todosReducer(state, action){
      
-    if(action.type =='test'){
-        return 'hello';
+    if(action.type ==='test'){
+        return 'test';
     }
     return state;
 }

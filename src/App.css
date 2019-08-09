@@ -1,11 +1,18 @@
-.todo-app{
-    max-width: 300px;
+.todo-app {
+    max-width: 400px;
     width: 100%;
-    margin: 0 auto;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
 }
 .list-todo{
     list-style: none;
     padding: 0;
+    text-align: left;
+    border-top: 2px solid #ccc;
+    padding-top: 40px;
+    margin-top: 40px;
 }
 a.button--filter {
     display: inline-block;
@@ -17,4 +24,19 @@ a.button--filter {
     border-radius: 5px;
     font-size: 14px;
     line-height: 18px;
+}
+ul.list-todo li {
+    margin-bottom: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+ul.list-todo button.remove {
+    background: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 2px 7px;
+    margin-left: 8px;
+    cursor: pointer;
 }

@@ -16,17 +16,6 @@ function Form({setTodos, todos}){
   }
 
 
-
-
-    // function onInputChange(e){
-    //     setTodoText(e.target.value);
-    // }
-    // function clickHandler(e){
-    //     e.preventDefault();
-    //     addTodo(todoText);
-    //     setTodo('');
-    //     inputFiled.current.focus();
-    // }
     return (
             <form>
                 <input 

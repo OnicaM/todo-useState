@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import AppContext from '../AppContext';
+import React from 'react';
+
 function TodoListItem({todo,onChangeTodo, onRemoveTodo}){
     
     return (
@@ -18,7 +18,7 @@ function Todolist({todos , toggleTodo, removeItem, checkItem}){
     
     return (
       <ul className="list-todo">
-          {todos.map((todo , index) => 
+          {todos.map((todo,index ) => 
                 <li key={todo.text}>
                     <TodoListItem 
                     todo={todo} 
